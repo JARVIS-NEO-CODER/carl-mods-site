@@ -1,117 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carl Mods — Skins ETS2 sur mesure</title>
-<meta name="description" content="Skins et mods Euro Truck Simulator 2 sur mesure, à la demande.">
 <style>
-  :root { --bg:#101014; --card:#1a1a21; --accent:#f5a623; --text:#eaeaf0; --muted:#9a9aa6; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
-  header { display:flex; justify-content:space-between; align-items:center; padding:18px 6vw; border-bottom:1px solid #23232b; position:sticky; top:0; background:rgba(16,16,20,.95); }
-  .brand { font-weight:800; font-size:1.2rem; letter-spacing:.5px; }
-  .brand span { color:var(--accent); }
-  nav a { color:var(--muted); text-decoration:none; margin-left:22px; font-size:.95rem; }
-  nav a:hover { color:var(--accent); }
-  .hero { text-align:center; padding:90px 6vw 70px; background:linear-gradient(180deg,#14141c 0%,#101014 100%); }
-  .hero h1 { font-size:2.4rem; max-width:640px; margin:0 auto 14px; }
-  .hero h1 em { color:var(--accent); font-style:normal; }
-  .hero p { color:var(--muted); max-width:520px; margin:0 auto 28px; }
-  .cta { display:inline-block; background:var(--accent); color:#111; font-weight:700; padding:12px 30px; border-radius:8px; text-decoration:none; }
-  section { padding:56px 6vw; }
-  h2 { font-size:1.5rem; margin-bottom:26px; }
-  h2::after { content:""; display:block; width:52px; height:3px; background:var(--accent); margin-top:8px; border-radius:2px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
-  .card { background:var(--card); border:1px solid #23232b; border-radius:12px; padding:24px; }
-  .card h3 { font-size:1.05rem; margin-bottom:8px; }
-  .price { color:var(--accent); font-weight:800; font-size:1.3rem; display:block; margin-bottom:6px; }
-  .card p { color:var(--muted); font-size:.92rem; }
-  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; counter-reset:step; }
-  .step { background:var(--card); border:1px solid #23232b; border-radius:12px; padding:24px; }
-  .step::before { counter-increment:step; content:counter(step); color:var(--accent); font-weight:800; font-size:1.6rem; display:block; margin-bottom:6px; }
-  .step p { color:var(--muted); font-size:.92rem; }
-  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
-  .shot { background:var(--card); border:1px solid #23232b; border-radius:12px; overflow:hidden; }
-  .shot .ph { height:150px; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:#23232b; }
-  .shot figcaption { padding:14px 18px; font-size:.92rem; color:var(--muted); }
-  .shot b { color:var(--text); }
-  .contact { text-align:center; }
-  .contact p { color:var(--muted); margin-bottom:20px; }
-  footer { text-align:center; padding:26px; color:#55555f; font-size:.85rem; border-top:1px solid #23232b; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#14161a;color:#e8e6e0;font-family:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid #262a31;position:sticky;top:0;background:rgba(20,22,26,.93);backdrop-filter:blur(6px);z-index:10}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;letter-spacing:.1em;font-size:14px}
+.logo em{color:#f0b429;font-style:normal}
+nav{display:flex;gap:26px;font-size:13px;color:#9b978e}
+nav a:hover{color:#e8e6e0}
+.hero{padding:92px 0 64px;background-image:linear-gradient(rgba(240,180,41,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(240,180,41,.028) 1px,transparent 1px);background-size:44px 44px}
+.kicker{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.22em;color:#f0b429;text-transform:uppercase}
+h1{font-size:clamp(38px,6vw,62px);line-height:1.04;letter-spacing:-.02em;font-weight:800;max-width:740px;margin:18px 0 20px}
+h1 em{font-style:normal;color:#f0b429}
+.sub{color:#a5a29a;max-width:560px;font-size:17px}
+.cta{display:flex;gap:22px;align-items:center;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-block;background:#f0b429;color:#151513;font-weight:700;font-size:14px;padding:13px 24px;border-radius:2px}
+.btn:hover{background:#ffcb47}
+.ghost{font-size:14px;color:#a5a29a;border-bottom:1px solid #3a3f47;padding-bottom:2px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #262a31;border-bottom:1px solid #262a31}
+.facts div{padding:14px 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;color:#8f8c84;text-transform:uppercase}
+.facts div+div{border-left:1px solid #262a31;padding-left:24px}
+section{padding:68px 0}
+h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
+.h2line{width:36px;height:2px;background:#f0b429;margin:10px 0 28px}
+.rates{border-top:1px solid #262a31}
+.rate{display:grid;grid-template-columns:1fr 130px;gap:24px;padding:22px 0;border-bottom:1px solid #262a31;align-items:baseline}
+.rate h3{font-size:17px}
+.rate p{color:#9b978e;font-size:14px;margin-top:6px;max-width:580px}
+.price{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;color:#f0b429;text-align:right;white-space:nowrap}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.slot{border:1px dashed #343a43;background:#191c21;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;border-radius:2px}
+.slot svg{width:72%;opacity:.9}
+.wcap{margin-top:12px}
+.idx{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:#8f8c84;letter-spacing:.12em}
+.wcap b{display:block;font-size:14px;margin-top:2px}
+.wcap span{color:#9b978e;font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.num{font-family:ui-monospace,Menlo,Consolas,monospace;color:#f0b429;font-size:13px;letter-spacing:.1em}
+.step h3{font-size:15px;margin:10px 0 8px}
+.step p{color:#9b978e;font-size:14px}
+.contact{padding:80px 0;border-top:1px solid #262a31}
+footer{border-top:1px solid #262a31;padding:22px 0;color:#77746d;font-size:12px;font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em}
+@media(max-width:760px){.facts,.works,.steps{grid-template-columns:1fr;gap:16px}.facts div+div{border-left:0;padding-left:0;border-top:1px solid #262a31}.rate{grid-template-columns:1fr}.price{text-align:left}}
 </style>
 </head>
 <body>
-<header>
-  <div class="brand">CARL <span>MODS</span></div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#realisations">Réalisations</a>
-    <a href="#process">Comment ça marche</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<header><div class="wrap hdr">
+<div class="logo">CARL <em>MODS</em></div>
+<nav><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#process">Comment ça marche</a><a href="#contact">Contact</a></nav>
+</div></header>
 
-<div class="hero">
-  <h1>Ton camion mérite mieux que le <em>rouge d'usine</em>.</h1>
-  <p>Skins et mods Euro Truck Simulator 2 faits sur mesure, à la demande. Tu décris, je peins, tu roules.</p>
-  <a class="cta" href="#contact">Commander un skin</a>
+<div class="hero"><div class="wrap">
+<p class="kicker">Livery &amp; mods — Euro Truck Simulator 2</p>
+<h1>Ton camion mérite mieux que le <em>rouge d'usine</em>.</h1>
+<p class="sub">Skins et mods ETS2 faits sur mesure, à la demande. Tu décris le camion, je peins, tu roules.</p>
+<div class="cta"><a class="btn" href="#contact">Commander un skin</a><a class="ghost" href="#realisations">Voir les réalisations</a></div>
+</div></div>
+
+<div class="facts"><div class="wrap" style="display:contents">
+<div>Livraison en .scs, prêt à installer</div>
+<div>Templates SCS officiels</div>
+<div>Ton retour à chaque étape</div>
+</div></div>
+
+<section id="services"><div class="wrap">
+<h2>Services &amp; tarifs</h2><div class="h2line"></div>
+<div class="rates">
+<div class="rate"><div><h3>Skin simple</h3><p>Une livery propre sur le camion de ton choix : couleurs, bandeaux, pseudo. Livrée prête à installer.</p></div><div class="price">10–15 €</div></div>
+<div class="rate"><div><h3>Tuning &amp; mods def</h3><p>Accessoires, réglages, petits mods de gameplay. Du sur-mesure sans toucher au 3D.</p></div><div class="price">15–25 €</div></div>
+<div class="rate"><div><h3>Projet custom</h3><p>Une livery complète à ton image (compagnie, eSport, serveur privé) ou un gros mod à la demande, sur devis.</p></div><div class="price">40–50 €</div></div>
 </div>
+</div></section>
 
-<section id="services">
-  <h2>Services &amp; tarifs</h2>
-  <div class="cards">
-    <div class="card">
-      <span class="price">10-15 €</span>
-      <h3>Skin simple</h3>
-      <p>Une livery propre sur le camion de ton choix : couleurs, bandeaux, pseudo. Livré prêt à installer.</p>
-    </div>
-    <div class="card">
-      <span class="price">15-25 €</span>
-      <h3>Tuning &amp; mods def</h3>
-      <p>Accessoires, réglages, petits mods de gameplay. Du sur-mesure sans toucher au 3D.</p>
-    </div>
-    <div class="card">
-      <span class="price">40-50 €</span>
-      <h3>Projet custom</h3>
-      <p>Une livery complète à ton image (compagnie, eSport, serveur privé) ou un gros mod à la demande, sur devis.</p>
-    </div>
-  </div>
-</section>
+<section id="realisations"><div class="wrap">
+<h2>Réalisations</h2><div class="h2line"></div>
+<div class="works">
+<div><div class="slot">
+<svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg"><path d="M8 100 H252" stroke="#2b3038" stroke-width="1" stroke-dasharray="3 4"/><path d="M30 92 V44 q0-8 8-8 h44 q7 0 11 7 l14 23 v26 z" fill="#3a4149"/><path d="M42 44 h34 q4 0 6 4 l8 13 h-48 z" fill="#22262c"/><circle cx="52" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><circle cx="104" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><rect x="126" y="34" width="112" height="52" fill="none" stroke="#333941" stroke-width="1.5" stroke-dasharray="5 5" rx="2"/><circle cx="160" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="182" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="204" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><text x="182" y="63" fill="#4a515b" font-size="9" text-anchor="middle" font-family="monospace">photo à venir</text></svg>
+</div><div class="wcap"><span class="idx">01</span><b>Scania S 2024</b><span>rouge foncé, cabine avant</span></div></div>
+<div><div class="slot">
+<svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg"><path d="M8 100 H252" stroke="#2b3038" stroke-width="1" stroke-dasharray="3 4"/><path d="M30 92 V44 q0-8 8-8 h44 q7 0 11 7 l14 23 v26 z" fill="#3a4149"/><path d="M42 44 h34 q4 0 6 4 l8 13 h-48 z" fill="#22262c"/><circle cx="52" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><circle cx="104" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><rect x="126" y="34" width="112" height="52" fill="none" stroke="#333941" stroke-width="1.5" stroke-dasharray="5 5" rx="2"/><circle cx="160" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="182" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="204" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><text x="182" y="63" fill="#4a515b" font-size="9" text-anchor="middle" font-family="monospace">photo à venir</text></svg>
+</div><div class="wcap"><span class="idx">02</span><b>Volvo FH16</b><span>bleu / vert (en cours)</span></div></div>
+<div><div class="slot">
+<svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg"><path d="M8 100 H252" stroke="#2b3038" stroke-width="1" stroke-dasharray="3 4"/><path d="M30 92 V44 q0-8 8-8 h44 q7 0 11 7 l14 23 v26 z" fill="#3a4149"/><path d="M42 44 h34 q4 0 6 4 l8 13 h-48 z" fill="#22262c"/><circle cx="52" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><circle cx="104" cy="92" r="9" fill="#1c2025" stroke="#3a4149" stroke-width="2"/><rect x="126" y="34" width="112" height="52" fill="none" stroke="#333941" stroke-width="1.5" stroke-dasharray="5 5" rx="2"/><circle cx="160" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="182" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><circle cx="204" cy="92" r="9" fill="#1c2025" stroke="#333941" stroke-width="2"/><text x="182" y="63" fill="#4a515b" font-size="9" text-anchor="middle" font-family="monospace">photo à venir</text></svg>
+</div><div class="wcap"><span class="idx">03</span><b>MAN TGX</b><span>dernière génération (à venir)</span></div></div>
+</div>
+</div></section>
 
-<section id="realisations">
-  <h2>Réalisations</h2>
-  <div class="gallery">
-    <figure class="shot">
-      <div class="ph">🚛</div>
-      <figcaption><b>Scania S 2024</b> — rouge foncé, cabine avant</figcaption>
-    </figure>
-    <figure class="shot">
-      <div class="ph">🚛</div>
-      <figcaption><b>Volvo FH16</b> — bleu / vert (en cours)</figcaption>
-    </figure>
-    <figure class="shot">
-      <div class="ph">🚛</div>
-      <figcaption><b>MAN TGX</b> — dernière génération (à venir)</figcaption>
-    </figure>
-  </div>
-</section>
+<section id="process"><div class="wrap">
+<h2>Comment ça marche</h2><div class="h2line"></div>
+<div class="steps">
+<div class="step"><span class="num">01</span><h3>Tu décris</h3><p>Tu me contactes sur Discord et tu me décris ton idée : camion, couleurs, ambiance.</p></div>
+<div class="step"><span class="num">02</span><h3>Je peins</h3><p>Je peins la livery sur le template officiel de ton camion, avec ton retour à chaque étape.</p></div>
+<div class="step"><span class="num">03</span><h3>Tu roules</h3><p>Je te livre le mod en .scs, prêt à glisser dans ton dossier mod. Tu roules avec.</p></div>
+</div>
+</div></section>
 
-<section id="process">
-  <h2>Comment ça marche</h2>
-  <div class="steps">
-    <div class="step"><p>Tu me contactes sur Discord et tu me décris ton idée : camion, couleurs, ambiance.</p></div>
-    <div class="step"><p>Je peins la livery sur le template officiel de ton camion, avec ton retour à chaque étape.</p></div>
-    <div class="step"><p>Je te livre le mod en .scs, prêt à glisser dans ton dossier mod. Tu roules avec.</p></div>
-  </div>
-</section>
+<section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2><div class="h2line"></div>
+<p style="color:#9b978e;max-width:560px">Le plus simple : un message sur Discord. Tu me décris ton idée, je te dis ce que ça donne et combien ça coûte.</p>
+<p style="margin-top:24px"><a class="btn" href="#">Mon Discord</a></p>
+</div></section>
 
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Le plus simple : un message sur Discord. Les commandes partent vite, le premier arrivé est servi.</p>
-  <a class="cta" href="#">Mon Discord</a>
-</section>
-
-<footer>© 2026 Carl Mods — skins ETS2 sur mesure. Site monté avec un coup de patte de Fo.</footer>
+<footer><div class="wrap">© 2026 Carl Mods — skins ETS2 sur mesure</div></footer>
 </body>
 </html>
