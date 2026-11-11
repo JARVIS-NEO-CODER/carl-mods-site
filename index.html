@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carl Mods — Skins ETS2 sur mesure</title>
+<meta name="description" content="Skins et mods Euro Truck Simulator 2 sur mesure, à la demande.">
+<style>
+  :root { --bg:#101014; --card:#1a1a21; --accent:#f5a623; --text:#eaeaf0; --muted:#9a9aa6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 6vw; border-bottom:1px solid #23232b; position:sticky; top:0; background:rgba(16,16,20,.95); }
+  .brand { font-weight:800; font-size:1.2rem; letter-spacing:.5px; }
+  .brand span { color:var(--accent); }
+  nav a { color:var(--muted); text-decoration:none; margin-left:22px; font-size:.95rem; }
+  nav a:hover { color:var(--accent); }
+  .hero { text-align:center; padding:90px 6vw 70px; background:linear-gradient(180deg,#14141c 0%,#101014 100%); }
+  .hero h1 { font-size:2.4rem; max-width:640px; margin:0 auto 14px; }
+  .hero h1 em { color:var(--accent); font-style:normal; }
+  .hero p { color:var(--muted); max-width:520px; margin:0 auto 28px; }
+  .cta { display:inline-block; background:var(--accent); color:#111; font-weight:700; padding:12px 30px; border-radius:8px; text-decoration:none; }
+  section { padding:56px 6vw; }
+  h2 { font-size:1.5rem; margin-bottom:26px; }
+  h2::after { content:""; display:block; width:52px; height:3px; background:var(--accent); margin-top:8px; border-radius:2px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+  .card { background:var(--card); border:1px solid #23232b; border-radius:12px; padding:24px; }
+  .card h3 { font-size:1.05rem; margin-bottom:8px; }
+  .price { color:var(--accent); font-weight:800; font-size:1.3rem; display:block; margin-bottom:6px; }
+  .card p { color:var(--muted); font-size:.92rem; }
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; counter-reset:step; }
+  .step { background:var(--card); border:1px solid #23232b; border-radius:12px; padding:24px; }
+  .step::before { counter-increment:step; content:counter(step); color:var(--accent); font-weight:800; font-size:1.6rem; display:block; margin-bottom:6px; }
+  .step p { color:var(--muted); font-size:.92rem; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .shot { background:var(--card); border:1px solid #23232b; border-radius:12px; overflow:hidden; }
+  .shot .ph { height:150px; display:flex; align-items:center; justify-content:center; font-size:2.4rem; background:#23232b; }
+  .shot figcaption { padding:14px 18px; font-size:.92rem; color:var(--muted); }
+  .shot b { color:var(--text); }
+  .contact { text-align:center; }
+  .contact p { color:var(--muted); margin-bottom:20px; }
+  footer { text-align:center; padding:26px; color:#55555f; font-size:.85rem; border-top:1px solid #23232b; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">CARL <span>MODS</span></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#process">Comment ça marche</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Ton camion mérite mieux que le <em>rouge d'usine</em>.</h1>
+  <p>Skins et mods Euro Truck Simulator 2 faits sur mesure, à la demande. Tu décris, je peins, tu roules.</p>
+  <a class="cta" href="#contact">Commander un skin</a>
+</div>
+
+<section id="services">
+  <h2>Services &amp; tarifs</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="price">10-15 €</span>
+      <h3>Skin simple</h3>
+      <p>Une livery propre sur le camion de ton choix : couleurs, bandeaux, pseudo. Livré prêt à installer.</p>
+    </div>
+    <div class="card">
+      <span class="price">15-25 €</span>
+      <h3>Tuning &amp; mods def</h3>
+      <p>Accessoires, réglages, petits mods de gameplay. Du sur-mesure sans toucher au 3D.</p>
+    </div>
+    <div class="card">
+      <span class="price">40-50 €</span>
+      <h3>Projet custom</h3>
+      <p>Une livery complète à ton image (compagnie, eSport, serveur privé) ou un gros mod à la demande, sur devis.</p>
+    </div>
+  </div>
+</section>
+
+<section id="realisations">
+  <h2>Réalisations</h2>
+  <div class="gallery">
+    <figure class="shot">
+      <div class="ph">🚛</div>
+      <figcaption><b>Scania S 2024</b> — rouge foncé, cabine avant</figcaption>
+    </figure>
+    <figure class="shot">
+      <div class="ph">🚛</div>
+      <figcaption><b>Volvo FH16</b> — bleu / vert (en cours)</figcaption>
+    </figure>
+    <figure class="shot">
+      <div class="ph">🚛</div>
+      <figcaption><b>MAN TGX</b> — dernière génération (à venir)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="process">
+  <h2>Comment ça marche</h2>
+  <div class="steps">
+    <div class="step"><p>Tu me contactes sur Discord et tu me décris ton idée : camion, couleurs, ambiance.</p></div>
+    <div class="step"><p>Je peins la livery sur le template officiel de ton camion, avec ton retour à chaque étape.</p></div>
+    <div class="step"><p>Je te livre le mod en .scs, prêt à glisser dans ton dossier mod. Tu roules avec.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Le plus simple : un message sur Discord. Les commandes partent vite, le premier arrivé est servi.</p>
+  <a class="cta" href="#">Mon Discord</a>
+</section>
+
+<footer>© 2026 Carl Mods — skins ETS2 sur mesure. Site monté avec un coup de patte de Fo.</footer>
+</body>
+</html>
